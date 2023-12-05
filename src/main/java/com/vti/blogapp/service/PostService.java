@@ -14,4 +14,6 @@ public interface PostService {
      PostDto create(PostCreateForm form);
 
      PostDto update(PostUpdateForm form, Long id);
+
+     void DeleteById(Long id);
 }
