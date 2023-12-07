@@ -10,7 +10,10 @@ import java.util.List;
 
 
 public interface PostService {
+    // Các phương thức đều auto là public
     Page<PostDto> findAll(Pageable pageable);
+
+    PostDto findById(Long id);
      PostDto create(PostCreateForm form);
 
      PostDto update(PostUpdateForm form, Long id);

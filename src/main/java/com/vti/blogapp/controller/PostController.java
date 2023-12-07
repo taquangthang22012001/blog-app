@@ -20,6 +20,12 @@ public class PostController {
     public Page<PostDto> findAll(Pageable pageable){
         return postService.findAll(pageable);
     }
+
+    @GetMapping("/api/v1/posts/{id}")
+    public PostDto findById(@PathVariable("id")  Long id) {
+        return postService.findById(id);
+    }
+
     @PostMapping("/api/v1/posts")
     public PostDto create(@RequestBody PostCreateForm form) {
         return postService.create(form);
@@ -33,6 +39,5 @@ public class PostController {
     @DeleteMapping("/api/v1/posts/{id}")
     public void DeleteById(@PathVariable("id") Long id) {
          postService.DeleteById(id);
-
     }
 }
